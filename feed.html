@@ -1,38 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Feed - NeighbourHub</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Feed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/feed.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo"><h2>NeighbourHub</h2></div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="feed.html">Community</a></li>
-        </ul>
-    </nav>
+<nav>
+<h2>NeighbourHub</h2>
 
-    <main class="container">
-        <div class="card">
-            <h3>Share with your community</h3>
-            <textarea id="postContent" placeholder="What's happening in your neighborhood?" style="width: 100%; height: 80px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; padding: 10px;"></textarea>
-            <button onclick="addPost()">Post</button>
-        </div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="profile.html">Profile</a>
+<a href="create-post.html" class="create-btn">Create Post</a>
+</div>
+</nav>
 
-        <div class="category-bar" style="margin: 20px 0; display: flex; gap: 10px;">
-            <button onclick="filterPosts('All')">All</button>
-            <button onclick="filterPosts('Events')">Events</button>
-            <button onclick="filterPosts('Questions')">Questions</button>
-        </div>
-        
-        <div id="feedList" style="margin-top: 2rem;">
-        </div>
-    </main>
+<section class="feed-container">
 
-    <script src="js/script.js"></script>
+<div class="top-bar">
+<input type="text" id="searchInput" placeholder="Search posts">
+</div>
+
+<div class="categories">
+<button class="filter-btn active" data-category="all">All</button>
+<button class="filter-btn" data-category="Events">Events</button>
+<button class="filter-btn" data-category="Questions">Questions</button>
+<button class="filter-btn" data-category="Announcements">Announcements</button>
+</div>
+
+<div id="posts">
+
+<div class="post-card" data-category="Events">
+<div class="post-header">
+<h3>Weekend Community Meetup</h3>
+<span>Events</span>
+</div>
+
+<p>
+Join us this Saturday evening for networking and activities.
+</p>
+
+<div class="post-actions">
+<button class="like-btn">Like <span>0</span></button>
+<button>Comment</button>
+</div>
+</div>
+
+<div class="post-card" data-category="Questions">
+<div class="post-header">
+<h3>Looking for Study Partners</h3>
+<span>Questions</span>
+</div>
+
+<p>
+Anyone interested in joining a weekly study group?
+</p>
+
+<div class="post-actions">
+<button class="like-btn">Like <span>0</span></button>
+<button>Comment</button>
+</div>
+</div>
+
+<div class="post-card" data-category="Announcements">
+<div class="post-header">
+<h3>Library Timing Update</h3>
+<span>Announcements</span>
+</div>
+
+<p>
+The library will remain open until 9 PM during exams.
+</p>
+
+<div class="post-actions">
+<button class="like-btn">Like <span>0</span></button>
+<button>Comment</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<script src="js/feed.js"></script>
+
 </body>
 </html>
